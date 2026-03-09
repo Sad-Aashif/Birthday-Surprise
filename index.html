@@ -8,7 +8,7 @@
 body{
 margin:0;
 font-family:Segoe UI, sans-serif;
-background:#0b0014;
+background:#000;
 color:white;
 text-align:center;
 overflow:hidden;
@@ -27,8 +27,8 @@ pointer-events:none;
 
 .bg-hearts span{
 position:absolute;
+color:#ff1a1a;
 font-size:22px;
-color:#d580ff;
 animation:float 10s linear infinite;
 opacity:0.6;
 }
@@ -58,7 +58,7 @@ button{
 padding:12px 22px;
 border:none;
 border-radius:10px;
-background:#a64dff;
+background:#ff1a1a;
 color:white;
 font-size:16px;
 cursor:pointer;
@@ -68,9 +68,13 @@ cursor:pointer;
 
 #main{
 display:none;
-flex-direction:column;
 height:100vh;
 width:100%;
+background:url("ghost.png") center center / contain no-repeat;
+background-color:#000;
+flex-direction:column;
+align-items:center;
+justify-content:center;
 animation:fadeIn 1.5s ease;
 }
 
@@ -79,50 +83,27 @@ animation:fadeIn 1.5s ease;
 100%{opacity:1;transform:translateY(0);}
 }
 
-/* section */
+/* title */
 
-.section{
-height:100vh;
-width:100%;
-background-size:contain;
-background-position:center;
-background-repeat:no-repeat;
-display:flex;
-flex-direction:column;
-align-items:center;
-justify-content:center;
-}
-
-/* backgrounds */
-
-.ghost{
-background-image:url("ghost.png");
-}
-
-.love{
-background-image:url("love.png");
+.title{
+font-size:42px;
+color:#ff4d4d;
+text-shadow:0 0 25px #ff0000;
+margin-bottom:20px;
 }
 
 /* bouncing heart */
 
 .heart{
 font-size:60px;
-color:#d580ff;
+color:#ff0000;
 animation:bounce 1.8s ease-in-out infinite;
 }
 
 @keyframes bounce{
 0%{transform:translateY(0);}
-50%{transform:translateY(-50px);}
+50%{transform:translateY(-40px);}
 100%{transform:translateY(0);}
-}
-
-/* glowing text */
-
-.title{
-font-size:40px;
-color:#f5ccff;
-text-shadow:0 0 20px #c266ff;
 }
 
 </style>
@@ -133,19 +114,19 @@ text-shadow:0 0 20px #c266ff;
 <!-- floating hearts -->
 
 <div class="bg-hearts">
-<span style="left:10%">💜</span>
-<span style="left:25%">💗</span>
-<span style="left:40%">💜</span>
-<span style="left:60%">💗</span>
-<span style="left:75%">💜</span>
-<span style="left:90%">💗</span>
+<span style="left:10%">❤️</span>
+<span style="left:25%">❤️</span>
+<span style="left:40%">❤️</span>
+<span style="left:60%">❤️</span>
+<span style="left:75%">❤️</span>
+<span style="left:90%">❤️</span>
 </div>
 
-<!-- LOGIN -->
+<!-- login page -->
 
 <div id="login">
 
-<h2>🔐 For My Bachcha 💜</h2>
+<h2>🔐 For My Mussu 🥰🤍</h2>
 <p>Enter the password</p>
 
 <input type="password" id="pass">
@@ -156,25 +137,13 @@ text-shadow:0 0 20px #c266ff;
 
 </div>
 
-<!-- MAIN PAGE -->
+<!-- main page -->
 
 <div id="main">
 
-<div class="section ghost">
+<h1 class="title">Happy Birthday My Love ❤️🎂😘🎊</h1>
 
-<h1 class="title">Happy Birthday My Love 💜🎂</h1>
-
-<div class="heart">💜</div>
-
-</div>
-
-<div class="section love">
-
-<h1 class="title">Happy Birthday</h1>
-<h2 class="title">My Love ❤️</h2>
-<h2 class="title">My Life 💖</h2>
-
-</div>
+<div class="heart">❤️</div>
 
 </div>
 
