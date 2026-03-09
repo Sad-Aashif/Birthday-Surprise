@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>For My Bachcha</title>
+
+<style>
+body{
+background:#0f172a;
+color:white;
+font-family:sans-serif;
+text-align:center;
+margin:0;
+overflow:hidden;
+}
+
+#login{
+margin-top:120px;
+}
+
+#main{
+display:none;
+}
+
+input{
+padding:10px;
+border-radius:8px;
+border:none;
+}
+
+button{
+padding:10px 20px;
+border:none;
+border-radius:8px;
+background:#ff4d6d;
+color:white;
+cursor:pointer;
+}
+
+canvas{
+display:block;
+}
+</style>
+</head>
+
+<body>
+
+<div id="login">
+
+<h2>🔐 For My Bachcha</h2>
+<p>Enter the secret password</p>
+
+<input type="password" id="pass">
+<br><br>
+
+<button onclick="check()">Unlock</button>
+
+</div>
+
+<div id="main">
+
+<h1>Happy Birthday Bachcha 🥰🎂🎊</h1>
+
+<p style="font-size:20px;">
+सुना है आज जन्मदिन हे तुम्हारा,<br>
+अगर तुम अपनाओ तो तोहफे में तुम्हें,<br>
+मैं खुद को सौंप दूं 😚😘
+</p>
+
+<div id="scene"></div>
+
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.min.js"></script>
+
+<script>
+
+function check(){
+
+let p=document.getElementById("pass").value;
+
+if(p==="10/03/2007"){
+document.getElementById("login").style.display="none";
+document.getElementById("main").style.display="block";
+start3D();
+}
+else{
+alert("Wrong password 😜");
+}
+
+}
+
+function start3D(){
+
+const scene=new THREE.Scene();
+
+const camera=new THREE.PerspectiveCamera(
+75,
+window.innerWidth/window.innerHeight,
+0.1,
+1000
+);
+
+const renderer=new THREE.WebGLRenderer();
+renderer.setSize(window.innerWidth,window.innerHeight);
+
+document.getElementById("scene").appendChild(renderer.domElement);
+
+const light=new THREE.DirectionalLight(0xffffff,1);
+light.position.set(2,2,5);
+scene.add(light);
+
+const girl=new THREE.Mesh(
+new THREE.BoxGeometry(1,2,1),
+new THREE.MeshStandardMaterial({color:0xff6fa5})
+);
+
+girl.position.x=-2;
+scene.add(girl);
+
+const boy=new THREE.Mesh(
+new THREE.BoxGeometry(1,2,1),
+new THREE.MeshStandardMaterial({color:0x4da6ff})
+);
+
+boy.position.x=2;
+scene.add(boy);
+
+const heart=new THREE.Mesh(
+new THREE.SphereGeometry(0.5,32,32),
+new THREE.MeshStandardMaterial({color:0xff0000})
+);
+
+heart.position.y=2;
+scene.add(heart);
+
+camera.position.z=6;
+
+function animate(){
+
+requestAnimationFrame(animate);
+
+girl.rotation.y+=0.01;
+boy.rotation.y-=0.01;
+
+heart.position.y=2+Math.sin(Date.now()*0.003);
+
+renderer.render(scene,camera);
+
+}
+
+animate();
+
+}
+
+</script>
+
+</body>
+</html>
