@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>For My Bachcha</title>
+<title>For My Bachcha🫀✨</title>
 
 <style>
 
@@ -15,7 +15,7 @@ text-align:center;
 overflow:hidden;
 }
 
-/* floating hearts background */
+/* floating hearts */
 
 .bg-hearts span{
 position:absolute;
@@ -29,11 +29,16 @@ opacity:0.6;
 100%{transform:translateY(-10vh);opacity:1;}
 }
 
-/* login screen */
+/* login */
 
 #login{
-margin-top:150px;
+position:absolute;
+top:50%;
+left:50%;
+transform:translate(-50%,-50%);
 }
+
+/* inputs */
 
 input{
 padding:12px;
@@ -52,7 +57,7 @@ font-size:16px;
 cursor:pointer;
 }
 
-/* main page */
+/* MAIN PAGE */
 
 #main{
 display:none;
@@ -114,7 +119,7 @@ animation:bounce 1.5s ease-in-out infinite;
 100%{transform:translateY(0);}
 }
 
-/* couple sway */
+/* sway animation */
 
 @keyframes sway{
 0%{transform:rotate(-4deg);}
@@ -127,7 +132,8 @@ animation:bounce 1.5s ease-in-out infinite;
 
 <body>
 
-<!-- floating hearts -->
+<!-- background hearts -->
+
 <div class="bg-hearts">
 <span style="left:10%">💗</span>
 <span style="left:25%">💖</span>
@@ -137,7 +143,8 @@ animation:bounce 1.5s ease-in-out infinite;
 <span style="left:90%">💝</span>
 </div>
 
-<!-- login -->
+
+<!-- LOGIN PAGE -->
 
 <div id="login">
 
@@ -152,7 +159,8 @@ animation:bounce 1.5s ease-in-out infinite;
 
 </div>
 
-<!-- main page -->
+
+<!-- MAIN PAGE -->
 
 <div id="main">
 
@@ -178,13 +186,14 @@ animation:bounce 1.5s ease-in-out infinite;
 
 </div>
 
+
 <script>
 
 function check(){
 
 let p=document.getElementById("pass").value;
 
-if(p==="10/03/2007"){
+if(p==="10032007"){
 
 document.getElementById("login").style.display="none";
 document.getElementById("main").style.display="flex";
