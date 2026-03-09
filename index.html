@@ -14,7 +14,7 @@ color:white;
 text-align:center;
 }
 
-/* login page */
+/* login screen */
 
 #login{
 margin-top:120px;
@@ -43,7 +43,6 @@ height:100vh;
 background:url("couple.png") center center / contain no-repeat;
 display:flex;
 flex-direction:column;
-justify-content:flex-start;
 align-items:center;
 padding-top:60px;
 }
@@ -52,19 +51,27 @@ padding-top:60px;
 
 .heart{
 font-size:60px;
-margin-top:180px;
-animation:float 2s ease-in-out infinite;
+margin-top:200px;
+animation:bounce 1.6s ease-in-out infinite;
 }
 
-/* heart animation */
+/* bouncing animation */
 
-@keyframes float{
+@keyframes bounce{
 
 0%{
 transform:translateY(0);
 }
 
+25%{
+transform:translateY(-40px);
+}
+
 50%{
+transform:translateY(0);
+}
+
+75%{
 transform:translateY(-20px);
 }
 
@@ -107,7 +114,7 @@ transform:translateY(0);
 
 </p>
 
-<div class="heart">❤️</div>
+<div class="heart">💗</div>
 
 </div>
 
@@ -118,7 +125,7 @@ function check(){
 
 let p=document.getElementById("pass").value;
 
-if(p==="10/03/2007"){
+if(p==="10032007"){
 
 document.getElementById("login").style.display="none";
 document.getElementById("main").style.display="flex";
